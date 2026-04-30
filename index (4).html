@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="google-site-verification" content="qWgu8jEM1SGj4PUQBjV3cdZMB5Jx_r-oSF8v0uIouSw" />
+<title>Clic Easy – Virginie Salendres, Médiatrice Numérique Certifiée</title>
+<style>
+  :root {
+    --vert: #2d6a4f;
+    --vert-clair: #52b788;
+    --vert-pale: #d8f3dc;
+    --beige: #f8f4ef;
+    --texte: #1a1a1a;
+    --gris: #6b7280;
+    --blanc: #ffffff;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { font-family: Georgia, serif; color: var(--texte); background: var(--beige); }
+  nav { position: fixed; top: 0; width: 100%; z-index: 100; background: rgba(248,244,239,0.97); border-bottom: 1px solid rgba(45,106,79,0.15); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; }
+  .nav-logo { font-size: 1.4rem; color: var(--vert); font-weight: bold; text-decoration: none; }
+  .nav-links { display: flex; gap: 2rem; list-style: none; }
+  .nav-links a { text-decoration: none; color: var(--texte); font-size: 0.9rem; font-family: Arial, sans-serif; }
+  .nav-cta { background: var(--vert) !important; color: var(--blanc) !important; padding: 0.5rem 1.2rem; border-radius: 50px; }
+  .hero { min-height: 100vh; display: flex; align-items: center; padding: 7rem 2rem 4rem; background: linear-gradient(135deg, #f8f4ef 55%, #d8f3dc 100%); }
+  .hero-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; }
+  .badge { display: inline-block; background: var(--vert-pale); color: var(--vert); padding: 0.4rem 1rem; border-radius: 50px; font-size: 0.78rem; font-family: Arial, sans-serif; font-weight: bold; letter-spacing: 0.08em; text-transform: uppercase; margin-bottom: 1.5rem; }
+  h1 { font-size: clamp(2rem, 4vw, 3rem); line-height: 1.2; margin-bottom: 1.2rem; font-weight: normal; }
+  h1 em { color: var(--vert); font-style: italic; }
+  .hero-desc { font-size: 1rem; color: var(--gris); line-height: 1.7; margin-bottom: 2rem; font-family: Arial, sans-serif; max-width: 500px; }
+  .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+  .btn-primary { background: var(--vert); color: var(--blanc); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; font-size: 0.95rem; }
+  .btn-outline { border: 2px solid var(--vert); color: var(--vert); padding: 0.9rem 2rem; border-radius: 50px; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; }
+  .hero-stats { display: flex; gap: 1rem; margin-top: 2.5rem; justify-content: center; max-width: 500px; }
+  .stat { background: var(--blanc); border-radius: 16px; padding: 1.2rem 2rem; text-align: center; box-shadow: 0 2px 16px rgba(45,106,79,0.10); flex: 1; }
+  .stat-num { font-size: 1.8rem; color: var(--vert); font-weight: bold; }
+  .stat-label { font-size: 0.8rem; color: var(--gris); font-family: Arial, sans-serif; }
+  .hero-card { background: var(--blanc); border-radius: 24px; padding: 2rem; box-shadow: 0 8px 40px rgba(45,106,79,0.15); }
+  .hero-card-title { font-size: 1.4rem; color: var(--vert); margin-bottom: 1.5rem; font-style: italic; }
+  .hero-card-item { display: flex; align-items: flex-start; gap: 1rem; margin-bottom: 1.2rem; }
+  .hero-card-icon { font-size: 1.3rem; flex-shrink: 0; }
+  .hero-card-item strong { display: block; font-size: 0.9rem; font-family: Arial, sans-serif; }
+  .hero-card-item span, .hero-card-item a { font-size: 0.85rem; color: var(--gris); font-family: Arial, sans-serif; text-decoration: none; }
+  section { padding: 5rem 2rem; }
+  .section-inner { max-width: 1100px; margin: 0 auto; }
+  .section-label { font-size: 0.78rem; font-weight: bold; letter-spacing: 0.1em; text-transform: uppercase; color: var(--vert-clair); margin-bottom: 0.8rem; font-family: Arial, sans-serif; }
+  h2 { font-size: clamp(1.8rem, 3vw, 2.4rem); margin-bottom: 1rem; font-weight: normal; }
+  .section-sub { color: var(--gris); font-size: 1rem; line-height: 1.7; max-width: 560px; margin-bottom: 3rem; font-family: Arial, sans-serif; }
+  #services { background: var(--blanc); }
+  .services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem; }
+  .service-card { background: var(--beige); border-radius: 20px; padding: 2rem; }
+  .service-icon { font-size: 2rem; margin-bottom: 1rem; display: block; }
+  .service-card h3 { font-size: 1.1rem; margin-bottom: 0.6rem; color: var(--vert); }
+  .service-card p { font-size: 0.88rem; color: var(--gris); line-height: 1.6; font-family: Arial, sans-serif; }
+  #tarifs { background: var(--beige); }
+  .tarifs-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; max-width: 780px; margin: 0 auto; }
+  .tarif-card { background: var(--blanc); border-radius: 24px; padding: 2rem; box-shadow: 0 2px 16px rgba(45,106,79,0.08); position: relative; border: 2px solid transparent; }
+  .tarif-card.featured { border-color: var(--vert); }
+  .tarif-badge { position: absolute; top: -14px; left: 50%; transform: translateX(-50%); background: var(--vert); color: var(--blanc); font-size: 0.75rem; font-family: Arial, sans-serif; font-weight: bold; padding: 0.3rem 1rem; border-radius: 50px; white-space: nowrap; }
+  .tarif-name { font-size: 0.78rem; font-weight: bold; text-transform: uppercase; color: var(--gris); margin-bottom: 0.4rem; font-family: Arial, sans-serif; }
+  .tarif-title { font-size: 1.3rem; margin-bottom: 0.6rem; }
+  .tarif-desc { font-size: 0.85rem; color: var(--gris); margin-bottom: 1.2rem; font-family: Arial, sans-serif; }
+  .tarif-price { font-size: 2.2rem; color: var(--vert); font-weight: bold; }
+  .tarif-price span { font-size: 1rem; font-weight: normal; color: var(--gris); font-family: Arial, sans-serif; }
+  .tarif-features { list-style: none; margin: 1.2rem 0; }
+  .tarif-features li { display: flex; align-items: center; gap: 0.6rem; font-size: 0.88rem; padding: 0.35rem 0; font-family: Arial, sans-serif; }
+  .tarif-features li::before { content: '✓'; color: var(--vert-clair); font-weight: bold; }
+  .btn-tarif { display: block; text-align: center; padding: 0.85rem; border-radius: 50px; text-decoration: none; font-family: Arial, sans-serif; font-weight: bold; font-size: 0.9rem; margin-top: 1rem; }
+  .btn-tarif-primary { background: var(--vert); color: var(--blanc); }
+  .btn-tarif-outline { border: 2px solid var(--vert); color: var(--vert); }
+  .citation-section { background: var(--vert); color: var(--blanc); text-align: center; padding: 4rem 2rem; }
+  .citation-text { font-size: clamp(1.2rem, 2.5vw, 1.7rem); font-style: italic; max-width: 700px; margin: 0 auto 1rem; line-height: 1.6; }
+  .citation-author { font-size: 0.9rem; opacity: 0.8; font-family: Arial, sans-serif; }
+  #apropos { background: var(--blanc); }
+  .apropos-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: 4rem; align-items: center; }
+  .photo-virginie { width: 100%; max-width: 340px; border-radius: 24px; box-shadow: 0 8px 40px rgba(45,106,79,0.2); display: block; }
+  .apropos-values { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-top: 1.5rem; }
+  .value-card { background: var(--beige); border-radius: 16px; padding: 1.2rem; }
+  .value-icon { font-size: 1.4rem; margin-bottom: 0.5rem; display: block; }
+  .value-card h4 { font-size: 0.95rem; margin-bottom: 0.3rem; }
+  .value-card p { font-size: 0.83rem; color: var(--gris); line-height: 1.5; font-family: Arial, sans-serif; }
+  .apropos-text p { color: var(--gris); line-height: 1.7; margin-bottom: 1rem; font-family: Arial, sans-serif; font-size: 0.95rem; }
+  #contact { background: var(--beige); }
+  .contact-grid { display: grid; grid-template-columns: 1fr 1.5fr; gap: 4rem; }
+  .contact-infos { display: flex; flex-direction: column; gap: 1.5rem; }
+  .contact-info-item { display: flex; align-items: flex-start; gap: 1rem; }
+  .contact-info-icon { width: 44px; height: 44px; background: var(--vert-pale); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.2rem; flex-shrink: 0; }
+  .contact-info-item strong { display: block; font-size: 0.9rem; font-family: Arial, sans-serif; }
+  .contact-info-item span, .contact-info-item a { font-size: 0.88rem; color: var(--gris); font-family: Arial, sans-serif; text-decoration: none; }
+  .contact-form { background: var(--blanc); border-radius: 24px; padding: 2.5rem; box-shadow: 0 2px 16px rgba(45,106,79,0.08); }
+  .contact-form h3 { font-size: 1.3rem; margin-bottom: 0.4rem; }
+  .contact-form > p { font-size: 0.85rem; color: var(--gris); margin-bottom: 1.5rem; font-family: Arial, sans-serif; }
+  .form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .form-group { margin-bottom: 1rem; }
+  .form-group label { display: block; font-size: 0.85rem; font-weight: bold; margin-bottom: 0.4rem; font-family: Arial, sans-serif; }
+  .form-group input, .form-group select, .form-group textarea { width: 100%; padding: 0.75rem 1rem; border: 1.5px solid #e5e7eb; border-radius: 12px; font-family: Arial, sans-serif; font-size: 0.9rem; background: var(--beige); outline: none; }
+  .form-group textarea { height: 100px; resize: vertical; }
+  .btn-submit { width: 100%; background: var(--vert); color: var(--blanc); border: none; padding: 1rem; border-radius: 50px; font-family: Arial, sans-serif; font-size: 0.95rem; font-weight: bold; cursor: pointer; }
+  footer { background: #1a1a1a; color: rgba(255,255,255,0.65); padding: 2rem; text-align: center; font-size: 0.85rem; font-family: Arial, sans-serif; }
+  .footer-links { display: flex; justify-content: center; gap: 2rem; margin-top: 0.5rem; flex-wrap: wrap; }
+  footer a { color: var(--vert-clair); text-decoration: none; }
+  #tarifs .section-inner { text-align: center; }
+  #tarifs .section-sub { text-align: left; margin-left: auto; margin-right: auto; }
+  @media (max-width: 768px) {
+    .hero-inner, .apropos-grid, .contact-grid { grid-template-columns: 1fr; }
+    .hero-card { display: none; }
+    .nav-links { display: none; }
+    .form-row, .services-grid, .tarifs-grid, .apropos-values { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <a href="#accueil" class="nav-logo">Clic Easy</a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#tarifs">Tarifs</a></li>
+    <li><a href="#apropos">&Agrave; propos</a></li>
+    <li><a href="#contact" class="nav-cta">Prendre rendez-vous</a></li>
+  </ul>
+</nav>
+
+<section id="accueil" class="hero">
+  <div class="hero-inner">
+    <div>
+      <div class="badge">M&eacute;diatrice num&eacute;rique certifi&eacute;e</div>
+      <h1>Le num&eacute;rique,<br><em>simplement</em> &agrave; votre port&eacute;e</h1>
+      <p class="hero-desc">Nous accompagnons les particuliers dans leurs d&eacute;marches administratives en ligne et l&rsquo;initiation aux outils informatiques, en douceur, &agrave; votre rythme.</p>
+      <div class="hero-btns">
+        <a href="#contact" class="btn-primary">Prendre rendez-vous &rarr;</a>
+        <a href="#services" class="btn-outline">D&eacute;couvrir nos services</a>
+      </div>
+      <div class="hero-stats">
+        <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Personnalis&eacute;</div></div>
+        <div class="stat"><div class="stat-num">&Agrave; domicile</div><div class="stat-label">D&eacute;placements</div></div>
+
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hero-card-title">Virginie Salendres</div>
+      <div class="hero-card-item"><div class="hero-card-icon">&#128205;</div><div><strong>Zone d&rsquo;intervention</strong><span>Pernes-les-Fontaines et alentours (20 km)</span></div></div>
+      <div class="hero-card-item"><div class="hero-card-icon">&#128222;</div><div><strong>T&eacute;l&eacute;phone</strong><a href="tel:0614815447">06 14 81 54 47</a></div></div>
+      <div class="hero-card-item"><div class="hero-card-icon">&#128231;</div><div><strong>Email</strong><a href="mailto:cliceasy84@gmail.com">cliceasy84@gmail.com</a></div></div>
+      <div class="hero-card-item"><div class="hero-card-icon">&#128336;</div><div><strong>Disponibilit&eacute;s</strong><span>Lundi &ndash; Vendredi &middot; 9h &ndash; 19h</span></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="section-inner">
+    <div class="section-label">Ce que nous proposons</div>
+    <h2>Nos services</h2>
+    <p class="section-sub">Un accompagnement bienveillant et adapt&eacute;, pour vous rendre autonome face aux outils num&eacute;riques du quotidien.</p>
+    <div class="services-grid">
+      <div class="service-card"><span class="service-icon">&#128187;</span><h3>Initiation &agrave; l&rsquo;informatique</h3><p>Prise en main d&rsquo;un ordinateur, tablette ou smartphone. Utilisation du clavier, de la souris, navigation sur internet et gestion des fichiers.</p></div>
+      <div class="service-card"><span class="service-icon">&#128203;</span><h3>D&eacute;marches administratives</h3><p>Aide pour vos demandes en ligne&nbsp;: CAF, Ameli, imp&ocirc;ts, retraite, carte grise, France Travail&hellip; Nous vous guidons pas &agrave; pas en toute s&eacute;curit&eacute;.</p></div>
+      <div class="service-card"><span class="service-icon">&#128231;</span><h3>Messagerie &amp; r&eacute;seaux</h3><p>Cr&eacute;er et utiliser une bo&icirc;te mail, communiquer avec vos proches, d&eacute;couvrir les visioconf&eacute;rences (WhatsApp, Zoom) et les r&eacute;seaux sociaux.</p></div>
+      <div class="service-card"><span class="service-icon">&#128274;</span><h3>S&eacute;curit&eacute; num&eacute;rique</h3><p>Reconna&icirc;tre les arnaques en ligne, prot&eacute;ger vos donn&eacute;es personnelles, cr&eacute;er des mots de passe s&ucirc;rs et naviguer sans risque.</p></div>
+      <div class="service-card"><span class="service-icon">&#9729;</span><h3>Photos &amp; stockage en ligne</h3><p>Organiser vos photos, utiliser le cloud (Google Drive, iCloud), sauvegarder vos documents importants et partager avec votre famille.</p></div>
+      <div class="service-card"><span class="service-icon">&#128722;</span><h3>Achats en ligne</h3><p>Faire ses courses, commander en ligne en toute confiance, comparer les prix et suivre ses livraisons, simplement et en s&eacute;curit&eacute;.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="tarifs">
+  <div class="section-inner">
+    <div class="section-label">Tarification</div>
+    <h2 style="text-align:center;">Des formules claires et transparentes, sans engagement.</h2>
+    <div class="tarifs-grid">
+      <div class="tarif-card">
+        <div class="tarif-name">D&eacute;couverte</div>
+        <div class="tarif-title">S&eacute;ance unique</div>
+        <div class="tarif-desc">Pour un besoin ponctuel ou tester l&rsquo;accompagnement</div>
+        <div class="tarif-price">25&euro; <span>/ heure</span></div>
+        <ul class="tarif-features">
+          <li>1 heure d&rsquo;accompagnement</li>
+          <li>&Agrave; domicile ou en ligne</li>
+          <li>Bilan de vos besoins</li>
+          <li>Support par email 48h</li>
+        </ul>
+        <a href="#contact" class="btn-tarif btn-tarif-outline">R&eacute;server</a>
+      </div>
+      <div class="tarif-card featured">
+        <div class="tarif-badge">&#11088; Le plus choisi</div>
+        <div class="tarif-name">Forfait</div>
+        <div class="tarif-title">5 s&eacute;ances</div>
+        <div class="tarif-desc">Pour progresser &agrave; votre rythme sur la dur&eacute;e</div>
+        <div class="tarif-price">110&euro; <span>/ 5 s&eacute;ances</span></div>
+        <ul class="tarif-features">
+          <li>5 &times; 1h d&rsquo;accompagnement</li>
+          <li>Programme personnalis&eacute;</li>
+          <li>&Agrave; domicile ou en ligne</li>
+          <li>Fiche r&eacute;capitulative offerte</li>
+          <li>Support WhatsApp inclus</li>
+        </ul>
+        <a href="#contact" class="btn-tarif btn-tarif-primary">R&eacute;server</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="citation-section">
+  <p class="citation-text">&laquo;&nbsp;Notre r&ocirc;le est de cr&eacute;er un lien entre chaque personne et le num&eacute;rique, sans jugement, avec patience et bienveillance.&nbsp;&raquo;</p>
+  <p class="citation-author">Virginie Salendres, m&eacute;diatrice num&eacute;rique certifi&eacute;e</p>
+</div>
+
+<section id="apropos">
+  <div class="section-inner">
+    <div class="apropos-grid">
+      <div>
+        <img src="https://i.imgur.com/GMD0YbR.jpeg" alt="Virginie Salendres, m&eacute;diatrice num&eacute;rique" class="photo-virginie">
+      </div>
+      <div class="apropos-text">
+        <div class="section-label">&Agrave; propos</div>
+        <h2>Une approche humaine du num&eacute;rique</h2>
+        <p>M&eacute;diatrice num&eacute;rique certifi&eacute;e, bas&eacute;e &agrave; Pernes-les-Fontaines, nous avons &agrave; c&oelig;ur de rendre le monde digital accessible &agrave; tous, quel que soit l&rsquo;&acirc;ge ou le niveau de d&eacute;part.</p>
+        <p>Forts de notre exp&eacute;rience, nous proposons des s&eacute;ances personnalis&eacute;es, &agrave; domicile ou &agrave; distance, pour progresser en confiance.</p>
+        <div class="apropos-values">
+          <div class="value-card"><span class="value-icon">&#129309;</span><h4>Bienveillance</h4><p>Un espace sans jugement o&ugrave; toutes les questions sont les bienvenues</p></div>
+          <div class="value-card"><span class="value-icon">🌱</span><h4>&Agrave; votre rythme</h4><p>Chaque personne apprend diff&eacute;remment, nous nous adaptons &agrave; votre niveau</p></div>
+          <div class="value-card"><span class="value-icon">&#127919;</span><h4>Concret &amp; pratique</h4><p>Des exercices tir&eacute;s de votre quotidien pour une autonomie durable</p></div>
+          <div class="value-card"><span class="value-icon">&#127968;</span><h4>&Agrave; domicile</h4><p>Nous intervenons chez vous ou &agrave; distance selon votre pr&eacute;f&eacute;rence</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="section-inner">
+    <div class="section-label">Contact &amp; rendez-vous</div>
+    <h2>Prenons rendez-vous</h2>
+    <p class="section-sub">Remplissez le formulaire ou contactez-nous directement.</p>
+    <div class="contact-grid">
+      <div class="contact-infos">
+        <div class="contact-info-item"><div class="contact-info-icon">&#128222;</div><div><strong>T&eacute;l&eacute;phone</strong><a href="tel:0614815447">06 14 81 54 47</a></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">&#128231;</div><div><strong>Email</strong><a href="mailto:cliceasy84@gmail.com">cliceasy84@gmail.com</a></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">&#128205;</div><div><strong>Zone d&rsquo;intervention</strong><span>Pernes-les-Fontaines et alentours (20 km)</span></div></div>
+        <div class="contact-info-item"><div class="contact-info-icon">&#128336;</div><div><strong>Disponibilit&eacute;s</strong><span>Lundi &ndash; Vendredi &middot; 9h &ndash; 19h</span></div></div>
+      </div>
+      <div class="contact-form">
+        <h3>Formulaire de rendez-vous</h3>
+        <p>Dites-nous ce dont vous avez besoin et nous vous proposons un cr&eacute;neau adapt&eacute;.</p>
+        <div class="form-row">
+          <div class="form-group"><label>Pr&eacute;nom *</label><input type="text" placeholder="Votre pr&eacute;nom"></div>
+          <div class="form-group"><label>Nom *</label><input type="text" placeholder="Votre nom"></div>
+        </div>
+        <div class="form-group"><label>Email *</label><input type="email" placeholder="votre@email.fr"></div>
+        <div class="form-group"><label>T&eacute;l&eacute;phone</label><input type="tel" placeholder="06 XX XX XX XX"></div>
+        <div class="form-group">
+          <label>Service souhait&eacute; *</label>
+          <select>
+            <option>Choisissez un service</option>
+            <option>Initiation &agrave; l&rsquo;informatique</option>
+            <option>D&eacute;marches administratives en ligne</option>
+            <option>Messagerie &amp; r&eacute;seaux sociaux</option>
+            <option>S&eacute;curit&eacute; num&eacute;rique</option>
+            <option>Photos &amp; stockage en ligne</option>
+            <option>Achats en ligne</option>
+            <option>Atelier collectif</option>
+            <option>Autre</option>
+          </select>
+        </div>
+        <div class="form-group"><label>Message</label><textarea placeholder="D&eacute;crivez votre besoin ou posez vos questions&hellip;"></textarea></div>
+        <button class="btn-submit">Envoyer ma demande &rarr;</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <p>Clic Easy &middot; Virginie Salendres &middot; Pernes-les-Fontaines</p>
+  <div class="footer-links">
+    <a href="#accueil">Accueil</a>
+    <a href="#services">Services</a>
+    <a href="#tarifs">Tarifs</a>
+    <a href="#apropos">&Agrave; propos</a>
+    <a href="#contact">Contact</a>
+  </div>
+  <p style="margin-top:1rem;">&copy; 2025 &ndash; M&eacute;diatrice num&eacute;rique certifi&eacute;e &middot; Tous droits r&eacute;serv&eacute;s</p>
+</footer>
+
+</body>
+</html>
